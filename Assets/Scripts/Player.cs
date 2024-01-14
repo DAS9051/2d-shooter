@@ -60,4 +60,13 @@ public class Player : MonoBehaviour
         Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
         fireTimer = 0;
     }
+
+    private void OnCollision2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            LevelManager.manager.GameOver();
+            Destroy(gameObject);
+        }
+    }
 }

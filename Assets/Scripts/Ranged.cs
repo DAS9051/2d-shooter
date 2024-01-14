@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ranged : MonoBehaviour
 {
+    public SmoothCamera smoothCamera;
+
     public Transform target;
     public float speed = 3f;
     public float rotateSpeed = 0.25f;
@@ -95,11 +97,17 @@ public class Ranged : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (smoothCamera != null)
+            {
+                smoothCamera.StopFollowing();
+            }
+            LevelManager.manager.GameOver();
             Destroy(collision.gameObject);
             target = null;
         }
         else if (collision.gameObject.CompareTag("Bullet"))
         {
+            LevelManager.manager.IncreaseScore(3);
             Destroy(collision.gameObject);
             Destroy(gameObject); // Consider adding a health system instead
         }

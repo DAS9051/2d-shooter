@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public SmoothCamera smoothCamera;
     public Transform target;
     public float speed = 3f;
     public float roateSpeed = 0.0025f;
@@ -51,10 +52,16 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (smoothCamera != null)
+            {
+                smoothCamera.StopFollowing();
+            }
+            LevelManager.manager.GameOver();
             Destroy(collision.gameObject);
             target = null;
         } else if (collision.gameObject.CompareTag("Bullet"))
         {
+            LevelManager.manager.IncreaseScore(1);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

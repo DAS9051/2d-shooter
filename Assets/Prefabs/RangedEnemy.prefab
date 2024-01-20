@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.87176263, b: 0, a: 1}
+  m_Color: {r: 0.035822347, g: 0.053803362, b: 0.21698111, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -181,11 +181,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f5655716f69d9488f8003a4048174c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothCamera: {fileID: 0}
   target: {fileID: 0}
-  speed: 3
+  speed: 7
   rotateSpeed: 0.25
-  distanceToShoot: 8
-  distanceToStop: 3
+  distanceToShoot: 15
+  distanceToStop: 10
   fireRate: 0.5
   firingPoint: {fileID: 492244533798714118}
   bulletPrefab: {fileID: 2231179097950366730, guid: d255a8f8f0d5ae64f933fdb5a3e5e823, type: 3}

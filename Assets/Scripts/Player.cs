@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
 
     private Vector2 mousePos;
 
+    public Sound soundScript;
+
     private void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -58,15 +60,10 @@ public class Player : MonoBehaviour
     private void Shoot()
     {
         Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
+        soundScript.shootSound();
         fireTimer = 0;
     }
 
-    private void OnCollision2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("EnemyBullet"))
-        {
-            LevelManager.manager.GameOver();
-            Destroy(gameObject);
-        }
-    }
+
+
 }

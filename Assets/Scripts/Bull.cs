@@ -24,7 +24,15 @@ public class Bull : MonoBehaviour
     {
         rb.velocity = transform.up * speed;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
 
+            LevelManager.manager.GameOver();
+            Destroy(collision.gameObject);
+        }
+    }
 
 
 }

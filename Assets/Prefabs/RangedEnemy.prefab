@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.035822347, g: 0.053803362, b: 0.21698111, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   distanceToStop: 10
   fireRate: 0.5
   firingPoint: {fileID: 492244533798714118}
-  bulletPrefab: {fileID: 2231179097950366730, guid: d255a8f8f0d5ae64f933fdb5a3e5e823, type: 3}
+  bulletPrefab: {fileID: 2231179097950366730, guid: 0973e4e04acec0549b8d4f410460db17, type: 3}
 --- !u!1 &9126931587347770663
 GameObject:
   m_ObjectHideFlags: 0
